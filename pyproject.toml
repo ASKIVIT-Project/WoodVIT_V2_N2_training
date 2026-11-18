@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "woodvit-rcnn"
+version = "0.1.0"
+description = "Mask R-CNN baselines (single sensor, early fusion, late fusion) for the WoodVIT V2 dataset"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Karlsruhe Institute of Technology (KIT)" }]
+dependencies = [
+    "torch",
+    "torchvision",
+    "numpy",
+    "pandas",
+    "opencv-python-headless",
+    "pillow",
+    "albumentations",
+    "pycocotools",
+    "matplotlib",
+    "tqdm",
+    "tensorboard",
+]
+
+[tool.setuptools]
+# Only the library package and the path file are installed; the script folders are run directly.
+packages = ["woodvit_rcnn"]
+py-modules = ["paths"]
